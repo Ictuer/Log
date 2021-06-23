@@ -12,7 +12,7 @@ var Setting = require('./models/Setting')
 app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
-    res.json({ now: Date.now() })
+    res.json({ success: true })
 })
 
 app.get('/logs', (req, res) => {
