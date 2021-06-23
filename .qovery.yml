@@ -1,0 +1,11 @@
+---
+application:
+  name: "log"
+  project: "Log"
+  organization: "QoveryCommunity"
+routers:
+- name: "main-log"
+  routes:
+  - application_name: "log"
+    paths:
+    - "/*"
