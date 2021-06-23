@@ -38,13 +38,13 @@ app.post('/', (req, res) => {
 app.get('/setting', (req, res) => {
     var { tool, key } = req.query
     if(!key) {
-        res.status(404).send('Not found')
+        res.send('KEY NOT FOUND')
     } else {
         Setting.findOne({ tool, key }).then(data => {
             if(data) {
                 res.send(JWT.encode({ data: data.value }))
             } else {
-                res.status(404).send('Not found')
+                res.send('KEY NOT FOUND')
             }
         })
     }
