@@ -15,6 +15,10 @@ app.get('/', (req, res) => {
     res.json({ success: true })
 })
 
+app.get('/logs', (req, res) => {
+   Log.find().then(data => res.json(data.map(i => i.type))
+})
+
 app.post('/log', (req, res) => {
     var data = JWT.decode(req.body.data)
     if(data) {
