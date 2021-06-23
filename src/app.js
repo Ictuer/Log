@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/logs', (req, res) => {
-   Log.find().then(data => res.json(data.map(i => i.type))
+   Log.find().then(data => res.json(data.map(i => i.type)))
 })
 
 app.post('/log', (req, res) => {
