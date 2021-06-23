@@ -7,5 +7,5 @@ app.get('/', (req, res) => {
 })
 
 
-app.listen(2302, () => console.log('.'))
+app.listen(process.env.PORT || 2302, () => console.log('.'))
 
