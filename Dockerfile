@@ -5,4 +5,4 @@ COPY package*json ./
 copy . .
 RUN npm install
 EXPOSE 2302
-CMD ["node", "index"]
+CMD ["node", "app"]
