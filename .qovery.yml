@@ -1,0 +1,15 @@
+---
+application:
+  name: "log"
+  project: "Log"
+  organization: "QoveryCommunity"
+databases:
+- type: "MONGODB"
+  name: "log"
+  version: "4.4"
+routers:
+- name: "main-log"
+  routes:
+  - application_name: "log"
+    paths:
+    - "/*"
