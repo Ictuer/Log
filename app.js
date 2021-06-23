@@ -59,9 +59,9 @@ app.get('/setting', (req, res) => {
 dotenv.config()
 var PORT = process.env.PORT || 2302
 
-//mongoose.connect(process.env.DB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-//    .then(() => {
+mongoose.connect(process.env.DB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => {
         app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
-//    })
+    })
 
 
