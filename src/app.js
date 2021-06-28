@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 
 //{type: 'bet', tool: 'baccarat', mac: '14:7d:da:c6:19:9a'}
 app.get('/logs', (req, res) => {
-    Log.find().then(data => res.json(data.map(i => {
+    Log.find().then(data => res.send(data.map(i => {
         switch(i.type) {
             case 'bet':
                 return `Bet ${i.data.total_bet} for ${i.data.for} => ${i.data.result} |${i.data.total} |${formatDistance(i.timestamps, Date.now())}`
@@ -28,7 +28,7 @@ app.get('/logs', (req, res) => {
                 return `${i.data.type.toUpperCase()} ${i.data.type == 'profit_limit' ? i.data.profit_limit : i.data.loss_limit } | ${formatDistance(i.timestamps, Date.now())}`
         }
         return i.type + " " + formatDistance(i.timestamps, Date.now())
-    })))
+    }).join('\n')))
 })
 
 app.post('/log', (req, res) => {
